@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paula Justiniano | Calzado Femenino</title>
+    <style>
+        /* --- VARIABLES DE COLOR --- */
+        :root {
+            --rosa-claro: #FFF0F5; /* Fondo general suave */
+            --rosa-pastel: #FFC0CB; /* Detalles y botones */
+            --rosa-oscuro: #FF69B4; /* Efectos hover */
+            --blanco: #FFFFFF;
+            --texto-oscuro: #333333;
+            --texto-claro: #666666;
+            --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- ESTILOS BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fuente-principal);
+            background-color: var(--rosa-claro);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            background-color: var(--blanco);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--texto-oscuro);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- SLIDER DE PRODUCTOS --- */
+        .slider-container {
+            width: 100%;
+            padding: 40px 0;
+            background-color: var(--blanco);
+        }
+
+        .slider-title {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 5%;
+            gap: 20px;
+        }
+
+        /* Ocultar barra de desplazamiento para un look más limpio */
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide-item {
+            flex: 0 0 100%;
+            max-width: 400px;
+            scroll-snap-align: center;
+            background-color: var(--rosa-claro);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .slide-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .slide-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .slide-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .slide-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* --- GUÍA DE TALLAS --- */
+        .size-guide {
+            padding: 60px 5%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .size-guide h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--blanco);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid var(--rosa-claro);
+        }
+
+        th {
+            background-color: var(--rosa-pastel);
+            color: var(--texto-oscuro);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background-color: var(--rosa-claro);
+        }
+
+        /* --- CTA / INSTAGRAM FOOTER --- */
+        .instagram-cta {
+            background-color: var(--blanco);
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 2px solid var(--rosa-pastel);
+        }
+
+        .instagram-cta h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .instagram-cta p {
+            color: var(--texto-claro);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn-instagram {
+            display: inline-block;
+            background-color: var(--rosa-pastel);
+            color: var(--texto-oscuro);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-instagram:hover {
+            background-color: var(--rosa-oscuro);
+            color: var(--blanco);
+            transform: scale(1.05);
+        }
+        
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .slide-item {
+                flex: 0 0 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Paula Justiniano</a>
+    </header>
+
+    <section class="slider-container">
+        <h2 class="slider-title">Nueva Colección</h2>
+        <div class="slider">
+            <div class="slide-item">
+                <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modelo usando Botas">
+                <div class="slide-info">
+                    <h3>Botas</h3>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modelo usando Mocasines">
+                <div class="slide-info">
+                    <h3>Mocasines</h3>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modelo usando Tacones">
+                <div class="slide-info">
+                    <h3>Tacones</h3>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modelo usando Tenis">
+                <div class="slide-info">
+                    <h3>Tenis</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="size-guide">
+        <h2>Guía de Tallas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Talla (EU)</th>
+                    <th>Talla (US)</th>
+                    <th>Centímetros (CM)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>35</td>
+                    <td>5</td>
+                    <td>22.5 cm</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>6</td>
+                    <td>23.0 cm</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>6.5</td>
+                    <td>23.5 cm</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>7.5</td>
+                    <td>24.5 cm</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>8.5</td>
+                    <td>25.0 cm</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>9</td>
+                    <td>25.5 cm</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer class="instagram-cta">
+        <h2>¿Encontraste tus favoritos?</h2>
+        <p>Realiza tu pedido de forma directa y personalizada a través de nuestro Instagram. ¡Te asesoramos con tu talla ideal!</p>
+        <a href="https://www.instagram.com/_paulajustiniano" target="_blank" class="btn-instagram">
+            Haz tu pedido en @_paulajustiniano
+        </a>
+    </footer>
+
+</body>
+</html>
